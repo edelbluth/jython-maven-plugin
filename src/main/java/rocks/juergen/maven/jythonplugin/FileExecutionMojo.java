@@ -35,6 +35,10 @@ import java.util.AbstractMap;
 public class FileExecutionMojo extends AbstractMojoExecution {
 
     @SuppressWarnings("CanBeFinal")
+    @Parameter(property = "baseDir", defaultValue = "${project.basedir}", required = true, readonly = true)
+    private String baseDir;
+
+    @SuppressWarnings("CanBeFinal")
     @Parameter(property = "pythonFile", required = true, readonly = true)
     private String pythonFile;
 
@@ -44,7 +48,7 @@ public class FileExecutionMojo extends AbstractMojoExecution {
                 JythonFileExcecutor.SCRIPT_FILE_INDEX,
                 pythonFile,
                 JythonFileExcecutor.class,
-                new AbstractMap.SimpleEntry<>(BASE_DIR_KEY, null)
+                new AbstractMap.SimpleEntry<>(BASE_DIR_KEY, baseDir)
         );
     }
 
