@@ -1,0 +1,1 @@
+print MVN_PROJECT_BASE_DIR
