@@ -1,6 +1,6 @@
 language: java
 
-sudo: false
+sudo: required
 
 jdk:
   - oraclejdk8
@@ -19,3 +19,6 @@ script:
 
 after_success:
   - mvn coveralls:report
+
+after_failure:
+  - ./collect_crash_info.sh
