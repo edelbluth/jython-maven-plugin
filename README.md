@@ -3,8 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/juergen-rocks/jython-maven-plugin/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/juergen-rocks/jython-maven-plugin.svg)](https://github.com/juergen-rocks/jython-maven-plugin/issues)
 [![GitHub forks](https://img.shields.io/github/forks/juergen-rocks/jython-maven-plugin.svg)](https://github.com/juergen-rocks/jython-maven-plugin/network)
-
-[TOC]
+[![Maven Central](https://img.shields.io/maven-central/v/rocks.juergen/jython-maven-plugin.svg?maxAge=3600)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22rocks.juergen%22%20AND%20a%3A%22jython-maven-plugin%22)
 
 # jython-maven-plugin
 
