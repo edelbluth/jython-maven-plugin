@@ -26,7 +26,9 @@ You can use the complete standard library that comes with Jython 2.7.
 
 By default, the plugin is bound to the `generate-resources` phase. With the `<execution>` tag, you can bind it to other phases.
 
-## Using inline script in POM
+## Configuration
+
+### Using inline script in POM
 
 The easiest use case is the usage of an inline script, directly included in your POM. Example:
 
@@ -66,7 +68,7 @@ If you have only a single line in your inline script, you can shorten the config
 <python><![CDATA[print 'hello, world!']]></python>
 ```
 
-## Using script file
+### Using script file
 
 A python file can be executed with this configuration:
 
@@ -93,37 +95,37 @@ A python file can be executed with this configuration:
 </build>
 ```
 
-## Executing scripts directly
+### Executing scripts directly
 
 You might want to execute a python file directly, for example to see if it's compatible.
 
-```bash
+```text
 mvn rocks.juergen:jython-maven-plugin:${VERSION}:exec -Dfile=/path/to/python/script.py
 ```
 
 Replace `${VERSION}` with the plugin version, or `LATEST` for the latest release.
 
-# Project information
+## Project information
 
-## License
+### License
 
-The plugin source code is licenced under the Apache License 2. See [./LICENSE](LICENSE) for details.
+The plugin source code is licenced under the Apache License 2. See [LICENSE](./LICENSE) for details.
 
-## Issue tracker
+### Issue tracker
 
 The project uses Github's [Issue Tracker](https://github.com/juergen-rocks/jython-maven-plugin/issues).
 
-## Pull Requests
+### Pull Requests
 
 Pull Requests are welcome! Get your fork and send us your Pull Request.
 
-## Class Diagram Overview
+### Class Diagram Overview
 
 The jython-maven-plugin consists consists of only a few classes and some more tests.
 
 [![Class Diagram](./doc/class-diagram.png)](./doc/class-diagram.png)
 
-## Siging key
+### Siging key
 
 All artifacts are signed [with this key](./doc/juergen.rocks-signing-key.asc):
 
