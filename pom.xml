@@ -9,7 +9,7 @@
 
     <name>Jython Maven Plugin</name>
     <description>Execute Python Scripts during Maven Build</description>
-    <url>http://juergen.rocks/maven-jython-plugin.html</url>
+    <url>https://github.com/juergen-rocks/jython-maven-plugin</url>
 
     <packaging>maven-plugin</packaging>
 
