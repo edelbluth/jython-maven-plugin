@@ -14,8 +14,11 @@ before_install:
   - export JAVA_OPTS="-Xms256m -Xmx2048m"
   - mvn -vv
 
+install:
+  - mvn clean
+
 script:
-  - mvn clean test jacoco:report -Pcoverage -e
+  - mvn test jacoco:report -Pcoverage -e
 
 after_success:
   - mvn coveralls:report -Pcoverage

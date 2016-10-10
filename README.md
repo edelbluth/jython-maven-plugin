@@ -4,6 +4,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/juergen-rocks/jython-maven-plugin.svg)](https://github.com/juergen-rocks/jython-maven-plugin/issues)
 [![GitHub forks](https://img.shields.io/github/forks/juergen-rocks/jython-maven-plugin.svg)](https://github.com/juergen-rocks/jython-maven-plugin/network)
 
+[TOC]
+
 # jython-maven-plugin
 
 A simple maven plugin to run python scripts during maven build – you can now use python 2.7 scripts within a maven run.
@@ -36,6 +38,14 @@ The easiest use case is the usage of an inline script, directly included in your
             <groupId>rocks.juergen</groupId>
             <artifactId>jython-maven-plugin</artifactId>
             <version>${jython-maven-plugin.version}</version>
+            <executions>
+                <execution>
+                    <id>execute-python</id>
+                    <goals>
+                        <goal>inline-script</goal>
+                    </goals>
+                </execution>
+            </executions>
             <configuration>
                 <python><![CDATA[
 for i in range(3):
@@ -51,7 +61,7 @@ Remark: Due to python's need for correct indentation, your inline python code mu
 
 Also, using `CDATA` is a good practise to keep your POM valid and clean.
 
-If you have only a single line in your inline script, you can simply to this:
+If you have only a single line in your inline script, you can shorten the configuration to this:
 
 ```xml
 <python><![CDATA[print 'hello, world!']]></python>
@@ -59,23 +69,64 @@ If you have only a single line in your inline script, you can simply to this:
 
 ## Using script file
 
+A python file can be executed with this configuration:
+
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>rocks.juergen</groupId>
+            <artifactId>jython-maven-plugin</artifactId>
+            <version>${jython-maven-plugin.version}</version>
+            <executions>
+                <execution>
+                    <id>execute-python</id>
+                    <goals>
+                        <goal>file</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <pythonFile>/path/to/python/script.py</pythonFile>    
+            </configuration>        
+        </plugin>
+    </plugins>
+</build>
+```
+
 ## Executing scripts directly
+
+You might want to execute a python file directly, for example to see if it's compatible.
+
+```bash
+mvn rocks.juergen:jython-maven-plugin:${VERSION}:exec -Dfile=/path/to/python/script.py
+```
+
+Replace `${VERSION}` with the plugin version, or `LATEST` for the latest release.
 
 # Project information
 
 ## License
 
+The plugin source code is licenced under the Apache License 2. See [./LICENSE](LICENSE) for details.
+
 ## Issue tracker
+
+The project uses Github's [Issue Tracker](https://github.com/juergen-rocks/jython-maven-plugin/issues).
 
 ## Pull Requests
 
+Pull Requests are welcome! Get your fork and send us your Pull Request.
+
 ## Class Diagram Overview
+
+The jython-maven-plugin consists consists of only a few classes and some more tests.
 
 [![Class Diagram](./doc/class-diagram.png)](./doc/class-diagram.png)
 
 ## Siging key
 
-All artefacts are signed [with this key](./doc/juergen.rocks-signing-key.asc):
+All artifacts are signed [with this key](./doc/juergen.rocks-signing-key.asc):
 
 ```text
 -----BEGIN PGP PUBLIC KEY BLOCK-----
