@@ -33,6 +33,7 @@ final class JythonExecutor {
      * @param context the context for the execution
      * @throws IllegalAccessException on an illegal access to the executor class
      * @throws InstantiationException on an instantiation exception with the executor class
+     * @throws IOException when something gone wrong with accessing the script
      */
     static void execute(Class<? extends IJythonExecutor> executor, Map<String, String> context) throws IllegalAccessException, InstantiationException, IOException {
         final IJythonExecutor jythonExecutor = executor.newInstance();
@@ -47,6 +48,7 @@ final class JythonExecutor {
      * @param contextValues The pairs of context data
      * @throws IllegalAccessException on an illegal access to the executor class
      * @throws InstantiationException on an instantiation exception with the executor class
+     * @throws IOException when something gone wrong with accessing the script
      */
     @SafeVarargs
     static void execute(Class<? extends IJythonExecutor> executor, AbstractMap.SimpleEntry<String, String>... contextValues) throws InstantiationException, IllegalAccessException, IOException {
