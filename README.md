@@ -3,6 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/juergen-rocks/jython-maven-plugin/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/juergen-rocks/jython-maven-plugin.svg)](https://github.com/juergen-rocks/jython-maven-plugin/issues)
 [![GitHub forks](https://img.shields.io/github/forks/juergen-rocks/jython-maven-plugin.svg)](https://github.com/juergen-rocks/jython-maven-plugin/network)
+[![Maven Central](https://img.shields.io/maven-central/v/rocks.juergen/jython-maven-plugin.svg?maxAge=3600)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22rocks.juergen%22%20AND%20a%3A%22jython-maven-plugin%22)
 
 # jython-maven-plugin
 
@@ -25,7 +26,9 @@ You can use the complete standard library that comes with Jython 2.7.
 
 By default, the plugin is bound to the `generate-resources` phase. With the `<execution>` tag, you can bind it to other phases.
 
-## Using inline script in POM
+## Configuration
+
+### Using inline script in POM
 
 The easiest use case is the usage of an inline script, directly included in your POM. Example:
 
@@ -36,6 +39,14 @@ The easiest use case is the usage of an inline script, directly included in your
             <groupId>rocks.juergen</groupId>
             <artifactId>jython-maven-plugin</artifactId>
             <version>${jython-maven-plugin.version}</version>
+            <executions>
+                <execution>
+                    <id>execute-python</id>
+                    <goals>
+                        <goal>inline-script</goal>
+                    </goals>
+                </execution>
+            </executions>
             <configuration>
                 <python><![CDATA[
 for i in range(3):
@@ -51,31 +62,72 @@ Remark: Due to python's need for correct indentation, your inline python code mu
 
 Also, using `CDATA` is a good practise to keep your POM valid and clean.
 
-If you have only a single line in your inline script, you can simply to this:
+If you have only a single line in your inline script, you can shorten the configuration to this:
 
 ```xml
 <python><![CDATA[print 'hello, world!']]></python>
 ```
 
-## Using script file
+### Using script file
 
-## Executing scripts directly
+A python file can be executed with this configuration:
 
-# Project information
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>rocks.juergen</groupId>
+            <artifactId>jython-maven-plugin</artifactId>
+            <version>${jython-maven-plugin.version}</version>
+            <executions>
+                <execution>
+                    <id>execute-python</id>
+                    <goals>
+                        <goal>file</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <pythonFile>/path/to/python/script.py</pythonFile>    
+            </configuration>        
+        </plugin>
+    </plugins>
+</build>
+```
 
-## License
+### Executing scripts directly
 
-## Issue tracker
+You might want to execute a python file directly, for example to see if it's compatible.
 
-## Pull Requests
+```text
+mvn rocks.juergen:jython-maven-plugin:${VERSION}:exec -Dfile=/path/to/python/script.py
+```
 
-## Class Diagram Overview
+Replace `${VERSION}` with the plugin version, or `LATEST` for the latest release.
+
+## Project information
+
+### License
+
+The plugin source code is licenced under the Apache License 2. See [LICENSE](./LICENSE) for details.
+
+### Issue tracker
+
+The project uses Github's [Issue Tracker](https://github.com/juergen-rocks/jython-maven-plugin/issues).
+
+### Pull Requests
+
+Pull Requests are welcome! Get your fork and send us your Pull Request.
+
+### Class Diagram Overview
+
+The jython-maven-plugin consists consists of only a few classes and some more tests.
 
 [![Class Diagram](./doc/class-diagram.png)](./doc/class-diagram.png)
 
-## Siging key
+### Siging key
 
-All artefacts are signed [with this key](./doc/juergen.rocks-signing-key.asc):
+All artifacts are signed [with this key](./doc/juergen.rocks-signing-key.asc):
 
 ```text
 -----BEGIN PGP PUBLIC KEY BLOCK-----
