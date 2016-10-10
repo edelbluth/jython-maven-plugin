@@ -36,6 +36,7 @@ abstract class AbstractMojoExecution extends AbstractMojo {
      * @param key Key for basic configuration (Script, Filename, etc.)
      * @param value Value for basic configuration
      * @param executor Executor class
+     * @param extraContext extra key-value pairs for the execution context
      * @throws MojoExecutionException when something goes wrong
      */
     @SafeVarargs

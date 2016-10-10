@@ -34,6 +34,8 @@ interface IJythonExecutor
 
     /**
      * The execution itself
+     *
+     * @throws IOException when something gone wrong with accessing the script
      */
     @SuppressWarnings("RedundantThrows")
     void executeJython() throws IOException;
