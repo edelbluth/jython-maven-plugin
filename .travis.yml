@@ -15,10 +15,10 @@ before_install:
   - mvn -vv
 
 script:
-  - mvn clean test jacoco:report -e
+  - mvn clean test jacoco:report -Pcoverage -e
 
 after_success:
-  - mvn coveralls:report
+  - mvn coveralls:report -Pcoverage
 
 after_failure:
   - ./collect_crash_info.sh
