@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/juergen-rocks/jython-maven-plugin.svg?branch=V_0)](https://travis-ci.org/juergen-rocks/jython-maven-plugin)
-[![Coverage Status](https://coveralls.io/repos/github/juergen-rocks/jython-maven-plugin/badge.svg?branch=V_0)](https://coveralls.io/github/juergen-rocks/jython-maven-plugin?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/juergen-rocks/jython-maven-plugin/badge.svg?branch=V_0)](https://coveralls.io/github/juergen-rocks/jython-maven-plugin?branch=V_0)
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/juergen-rocks/jython-maven-plugin/V_0/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/juergen-rocks/jython-maven-plugin.svg)](https://github.com/juergen-rocks/jython-maven-plugin/issues)
 [![GitHub forks](https://img.shields.io/github/forks/juergen-rocks/jython-maven-plugin.svg)](https://github.com/juergen-rocks/jython-maven-plugin/network)
