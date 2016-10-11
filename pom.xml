@@ -5,7 +5,7 @@
 
     <groupId>rocks.juergen</groupId>
     <artifactId>jython-maven-plugin</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
 
     <name>Jython Maven Plugin</name>
     <description>Execute Python Scripts during Maven Build</description>
