@@ -49,7 +49,7 @@ public class TestExecuteMojoErrorBehaviour extends AbstractMojoTest {
     public static List<Object[]> getParameters() {
         final ArrayList<Object[]> parameters = new ArrayList<>();
         parameters.add(new Object[]{null, MojoExecutionException.class});
-        parameters.add(new Object[]{"", IllegalArgumentException.class});
+        parameters.add(new Object[]{"", PyException.class});
         parameters.add(new Object[]{"/oh/no/this/does/not/exist.py", PyException.class});
         return parameters;
     }

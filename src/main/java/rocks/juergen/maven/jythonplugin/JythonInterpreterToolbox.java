@@ -59,7 +59,12 @@ final class JythonInterpreterToolbox {
     static PythonInterpreter connectedInterpreterFactory(final String... pythonPathExtension) {
         final PySystemState pySysStat = new PySystemState();
         for (final String extension : pythonPathExtension) {
-            pySysStat.path.append(new PyString(extension));
+            if (extension != null) {
+                final String ex = extension.trim();
+                if (ex.length() > 0) {
+                    pySysStat.path.append(new PyString(ex));
+                }
+            }
         }
         return createConnectedInterpreter(pySysStat);
     }
